@@ -1,0 +1,15 @@
+#include<bits/stdc++.h> 
+int findDuplicate(vector<int> &arr, int n){
+	// Write your code here.
+    unordered_set<int>s;
+    s.insert(arr[0]);
+    for(int i=1;i<n;i++)
+    {
+        int x=arr[i];
+        if(s.find(x)!=s.end())
+            return arr[i];
+        else
+            s.insert(arr[i]);
+    }
+    return -1;
+}
